@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ProjectCSharp
+namespace ProjectCSharp.Program_dir
 {
     public static class MethodsSuite
     {
@@ -16,7 +16,7 @@ namespace ProjectCSharp
             {
                 return x.Substring(0, 1);
             }
-            return "Not implented yet";
+            return "Not implemented yet";
         }
         public static string F2(char x)
         {
@@ -43,13 +43,10 @@ namespace ProjectCSharp
         public static string F4(string x, string y = "false")
         {
             if (y == "false")
-            {
                 if (x == "ala" || x == "kot")
                 {
                     return x + " ma kota";
                 }
-                return "Not implemented yet";
-            }
             if (x == "kot" && y == "psa" || x == "kot" && y == "mysz")
             {
                 return x + " ma kota i " + y;
@@ -74,7 +71,7 @@ namespace ProjectCSharp
                     case 7:
                         return (string.Join(",", Enumerable.Range(0, x).ToList()));
                     default:
-                        return x.ToString("not implemented yet");
+                        return x.ToString("Not implemented yet");
                 }
             }
 
@@ -99,7 +96,7 @@ namespace ProjectCSharp
                     return string.Join(",", arrayList3.ToArray());
                 
                 default:
-                    return x.ToString("not implemented yet");
+                    return x.ToString("Not implemented yet");
             }
          }
         public static string F6(int x, string y)
@@ -115,7 +112,7 @@ namespace ProjectCSharp
                     return (string.Concat(Enumerable.Repeat(y, x)));
                 }
                 default:
-                    return "not implemented yet";
+                    return "Not implemented yet";
             }
         }
         public static string F7(int x)
@@ -152,7 +149,7 @@ namespace ProjectCSharp
             {
                 return "jest zero";
             }
-            return "not implemented yet";
+            return "Not implemented yet";
         }
         public static string F10(int x, int y)
         {
@@ -160,7 +157,7 @@ namespace ProjectCSharp
             {
                 return "rowne";
             }
-            return x != y ? "rozne" : "not implemented yet";
+            return x != y ? "rozne" : "Not implemented yet";
         }
     }
 }

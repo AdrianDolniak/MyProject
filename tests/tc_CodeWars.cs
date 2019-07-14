@@ -1,6 +1,7 @@
 using NUnit.Framework;
+using ProjectCSharp.Program_dir;
 
-namespace ProjectCSharp.CodeWarsCSharp
+namespace ProjectCSharp.Tests_dir
 {
     [TestFixture]
     public class WaterMelonTest
@@ -97,11 +98,13 @@ namespace ProjectCSharp.CodeWarsCSharp
         {
             Assert.AreEqual(true, DivisibleNb.IsDivisible(12,4,3));
         }
+        
         [Test]
         public void Test2() 
         {
             Assert.AreEqual(false, DivisibleNb.IsDivisible(3,3,4));
         }
+        
         [Test]
         public void Test3()
         {
