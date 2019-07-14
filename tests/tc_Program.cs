@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
-using ProjectCSharp.Program_dir;
+using ProjectCSharp.program;
 
-namespace ProjectCSharp.Tests_dir
+namespace ProjectCSharp.tests
 {
     [TestFixture]
     public class TestMethodsSuite

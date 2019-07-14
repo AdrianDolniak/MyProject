@@ -1,6 +1,6 @@
 using System;
 
-namespace ProjectCSharp.Program_dir
+namespace ProjectCSharp.program
 {
     public static class Watermelon
     {
