@@ -1,6 +1,6 @@
 using System;
 
-namespace MyProject.CodeWarsCSharp
+namespace ProjectCSharp.CodeWarsCSharp
 {
     public static class Watermelon
     {

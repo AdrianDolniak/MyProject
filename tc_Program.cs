@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
 
-namespace MyProject
+namespace ProjectCSharp
 {
     [TestFixture]
-    public class MethodsSuiteTest
+    public class TestMethodsSuite
     {
         [Test]
         public void F01_1()

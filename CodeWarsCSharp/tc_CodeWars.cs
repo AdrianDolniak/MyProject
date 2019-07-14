@@ -1,6 +1,6 @@
 using NUnit.Framework;
 
-namespace MyProject.CodeWarsCSharp
+namespace ProjectCSharp.CodeWarsCSharp
 {
     [TestFixture]
     public class WaterMelonTest

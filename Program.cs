@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace MyProject
+namespace ProjectCSharp
 {
     public static class MethodsSuite
     {
