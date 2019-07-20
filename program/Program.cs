@@ -69,7 +69,15 @@ namespace ProjectCSharp.program
                     case 2:
                         return (string.Join(",", Enumerable.Range(0, x).ToList()));
                     case 7:
+                    // option 1  
                         return (string.Join(",", Enumerable.Range(0, x).ToList()));
+                    // option 2
+                    /*
+                     *  ArrayList arrayList07 = new ArrayList();
+                        for (int i = 0; i < x; i += 1)
+                            arrayList07.Add(i);
+                        return string.Join(",", arrayList07.ToArray());
+                     */
                     default:
                         return x.ToString("Not implemented yet");
                 }

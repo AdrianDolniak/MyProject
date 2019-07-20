@@ -66,6 +66,7 @@ namespace ProjectCSharp.tests
             Assert.AreEqual(Watermelon.Divide(32), true);
         }
     }
+
     [TestFixture]
     public class ReversedStringTest
     {
@@ -75,7 +76,7 @@ namespace ProjectCSharp.tests
             Assert.AreEqual("dlrow", ReversedString.Reversed("world"));
         }
     }
-    
+
     [TestFixture]
     public class EvenOddTest
     {
@@ -89,29 +90,29 @@ namespace ProjectCSharp.tests
             Assert.AreEqual("Odd", EvenOdd.EvenOrOdd(-1));
         }
     }
-    
+
     [TestFixture]
     public class DivisibleNumberTest
     {
         [Test]
         public void Test1()
         {
-            Assert.AreEqual(true, DivisibleNb.IsDivisible(12,4,3));
+            Assert.AreEqual(true, DivisibleNb.IsDivisible(12, 4, 3));
         }
-        
+
         [Test]
-        public void Test2() 
+        public void Test2()
         {
-            Assert.AreEqual(false, DivisibleNb.IsDivisible(3,3,4));
+            Assert.AreEqual(false, DivisibleNb.IsDivisible(3, 3, 4));
         }
-        
+
         [Test]
         public void Test3()
         {
-            Assert.AreEqual(false, DivisibleNb.IsDivisible(8,3,4));
+            Assert.AreEqual(false, DivisibleNb.IsDivisible(8, 3, 4));
         }
     }
-    
+
     [TestFixture]
     public class DescendingOrderTest
     {
@@ -133,7 +134,7 @@ namespace ProjectCSharp.tests
             Assert.AreEqual(95431, Descending.DescendingOrder(19345));
         }
     }
-    
+
     [TestFixture]
     public class RemoveFirstCharTest
     {
@@ -147,7 +148,7 @@ namespace ProjectCSharp.tests
             StringAssert.AreEqualIgnoringCase("", RemoveFirstChar.Remove_char("ok"));
         }
     }
-    
+
     [TestFixture]
     public class AddBinaryTest
     {
@@ -163,20 +164,54 @@ namespace ProjectCSharp.tests
             Assert.AreEqual("1010", Binary.AddBinary(3, 7));
         }
     }
-    
+
     [TestFixture]
     public class OppositeNumberTest
     {
         [Test]
         public void Test1()
-        {   
+        {
             Assert.AreEqual(-1, OppositeNumber.Opposite(1));
         }
 
         [Test]
         public void Test2()
         {
-            Assert.AreEqual(50 , OppositeNumber.Opposite(-50));
+            Assert.AreEqual(50, OppositeNumber.Opposite(-50));
+        }
+    }
+
+    [TestFixture]
+    public class SumOfTwoLowestPositiveIntegersTest
+    {
+        [Test]
+        public void Test1()
+        {
+            Assert.AreEqual(7, SumOfTwoLowestPositiveIntegers.Sum("19, 5, 42, 2, 77"));
+        }
+
+        [Test]
+        public void Test2()
+        {
+            Assert.AreEqual(3453455, SumOfTwoLowestPositiveIntegers.Sum("10, 343445353, 3453445, 3453545353453"));
+        }
+    }
+
+    [TestFixture]
+    public class TestConvertAStringToAnArrayTest
+    {
+        [Test]
+        public void Test1()
+        {
+            Assert.AreEqual(new string[] {"Robin", "Singh"}, ConvertAStringToAnArray.ConvertToString("Robin Singh"));
+        }
+        
+        [Test]
+        public void Test2()
+        {
+            Assert.AreEqual(new string[] {"I", "love", "arrays", "they", "are", "my", "favorite"},
+                    ConvertAStringToAnArray.ConvertToString("I love arrays they are my favorite"));
         }
     }
 }
+
