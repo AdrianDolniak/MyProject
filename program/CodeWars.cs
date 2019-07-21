@@ -1,9 +1,5 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using Microsoft.VisualBasic;
-using Microsoft.VisualStudio.TestPlatform.CoreUtilities.Extensions;
 
 namespace ProjectCSharp.program
 {
@@ -49,25 +45,11 @@ namespace ProjectCSharp.program
     {
         public static int DescendingOrder(int num)
         {
-            var count = new int[10];
-
-            var str = num.ToString();
-
-            foreach (var t in str)
-                count[t - '0']++;
-
-            int result = 0, multiplier = 1;
-
-            for (var i = 0; i <= 9; i++)
-            {
-                while (count[i] > 0)
-                {
-                    result = result + (i * multiplier);
-                    count[i]--;
-                    multiplier = multiplier * 10;
-                }
-            }
-            return result;
+            var numbers = num.ToString().ToList();
+            numbers.Sort();
+            numbers.Reverse();
+            var sorted = int.Parse(string.Join("", numbers));
+            return sorted;
         }
     }
 
