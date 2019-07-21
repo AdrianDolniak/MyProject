@@ -1,3 +1,4 @@
+using System;
 using NUnit.Framework;
 using ProjectCSharp.program;
 
@@ -213,5 +214,28 @@ namespace ProjectCSharp.tests
                     ConvertAStringToAnArray.ConvertToString("I love arrays they are my favorite"));
         }
     }
+
+    [TestFixture]
+    public class TestSumWithoutHighestAndLowestNumber
+    {
+        [Test]
+        public void Test1()
+        {
+            Assert.AreEqual(16, SumWithoutHighestAndLowestNumber.Sum(new[] { 6, 2, 1, 8, 10}));
+        }
+        
+        [Test]
+        public void Test2()
+        {
+            Assert.AreEqual(0, SumWithoutHighestAndLowestNumber.Sum(new[] { 6 }));
+        }
+        
+        [Test]
+        public void Test3()
+        {
+            Assert.AreEqual(0, SumWithoutHighestAndLowestNumber.Sum(null));
+        }
+    }
+    
 }
 

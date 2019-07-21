@@ -104,6 +104,22 @@ namespace ProjectCSharp.program
             return words;
         }
     }
+
+    public static class SumWithoutHighestAndLowestNumber
+    {
+        public static int Sum(int[] x)
+        {
+            if (x == null)
+                return 0;
+            if (x.Length <= 1)
+                return 0;
+            var numMax = x.Max();
+            var numMin = x.Min();
+            var sumAll = x.Sum();
+            var sum = sumAll - (numMax + numMin);
+            return sum;
+        }
+    }
 }
 
             
