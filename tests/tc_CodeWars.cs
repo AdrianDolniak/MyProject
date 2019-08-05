@@ -236,6 +236,20 @@ namespace ProjectCSharp.tests
             Assert.AreEqual(0, SumWithoutHighestAndLowestNumber.Sum(null));
         }
     }
-    
-}
 
+    [TestFixture]
+    public class TestShortestWord
+    {
+        [Test]
+        public void Test1()
+        {
+            Assert.AreEqual(3, ShortestWord.Short("bitcoin take over the world maybe who knows perhaps"));
+        }
+
+        [Test]
+        public void Test2()
+        {
+            Assert.AreEqual(3, ShortestWord.Short("turns out random test cases are easier than writing out basic ones")); 
+        }
+    }
+}
