@@ -1,5 +1,7 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 
 namespace ProjectCSharp.program
 {
@@ -119,6 +121,17 @@ namespace ProjectCSharp.program
             var sum = sumAll - (numMax + numMin);
             return sum;
         }
+    }
+
+    public static class ShortestWord
+    {
+        public static int Short(string x)
+        {
+            var wordsSplit = x.Split(default(string[]), StringSplitOptions.None);
+            var wordsSort = from element in wordsSplit orderby element.Length select element;
+            var shortest = wordsSort.First();
+            return shortest.Length;
+        } 
     }
 }
 
