@@ -24,11 +24,9 @@ namespace ProjectCSharp.program
             return (arg1 - arg2);
         }
 
-        public static float Modulo(float arg1, float arg2)
+        public static double Power(float arg1, float arg2)
         {
-            return (arg1 % arg2);
+            return Math.Pow(arg1, arg2);
         }
-
     }
-
 }

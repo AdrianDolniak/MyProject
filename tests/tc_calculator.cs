@@ -4,7 +4,7 @@ using ProjectCSharp.program;
 namespace ProjectCSharp.tests
 {
     [TestFixture]
-    public class CalculatorTest
+    public class TestCalculator
     {
         [Test]
         public void TestCalculatorAdding()
@@ -26,12 +26,11 @@ namespace ProjectCSharp.tests
         {
             Assert.AreEqual(4, Calculator.Divide(24, 6));        
         }
+
         [Test]
-        public void TestCalculatorModulo()
+        public void TestCalculatorPower()
         {
-            Assert.AreEqual(0, Calculator.Modulo(6, 6));
-            Assert.AreEqual(0, Calculator.Modulo(8, 4));
-            Assert.AreEqual(0, Calculator.Modulo(100, 10));
+            Assert.AreEqual(expected:27, Calculator.Power(3, 3));
         }
     }
 }

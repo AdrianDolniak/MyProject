@@ -5,7 +5,7 @@ using ProjectCSharp.program;
 namespace ProjectCSharp.tests
 {
     [TestFixture]
-    public class WaterMelonTest
+    public class TestWaterMelon
     {
         [Test]
         public void Test01()
@@ -69,7 +69,7 @@ namespace ProjectCSharp.tests
     }
 
     [TestFixture]
-    public class ReversedStringTest
+    public class TestReversedString
     {
         [Test]
         public void World_test()
@@ -79,7 +79,7 @@ namespace ProjectCSharp.tests
     }
 
     [TestFixture]
-    public class EvenOddTest
+    public class TestEvenOdd
     {
         [Test]
         public void MyTest()
@@ -93,7 +93,7 @@ namespace ProjectCSharp.tests
     }
 
     [TestFixture]
-    public class DivisibleNumberTest
+    public class TestDivisibleNumber
     {
         [Test]
         public void Test1()
@@ -115,7 +115,7 @@ namespace ProjectCSharp.tests
     }
 
     [TestFixture]
-    public class DescendingOrderTest
+    public class TestDescendingOrder
     {
         [Test]
         public void Test1()
@@ -137,7 +137,7 @@ namespace ProjectCSharp.tests
     }
 
     [TestFixture]
-    public class RemoveFirstCharTest
+    public class TestRemoveFirstChar
     {
         [Test]
         public void Test1()
@@ -151,7 +151,7 @@ namespace ProjectCSharp.tests
     }
 
     [TestFixture]
-    public class AddBinaryTest
+    public class TestAddBinary
     {
         [Test]
         public void Test1()
@@ -167,7 +167,7 @@ namespace ProjectCSharp.tests
     }
 
     [TestFixture]
-    public class OppositeNumberTest
+    public class TestOppositeNumber
     {
         [Test]
         public void Test1()
@@ -183,7 +183,7 @@ namespace ProjectCSharp.tests
     }
 
     [TestFixture]
-    public class SumOfTwoLowestPositiveIntegersTest
+    public class TestSumOfTwoLowestPositiveIntegers
     {
         [Test]
         public void Test1()
@@ -199,7 +199,7 @@ namespace ProjectCSharp.tests
     }
 
     [TestFixture]
-    public class TestConvertAStringToAnArrayTest
+    public class TestConvertAStringToAnArray
     {
         [Test]
         public void Test1()
