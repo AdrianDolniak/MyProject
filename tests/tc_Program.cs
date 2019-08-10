@@ -27,7 +27,6 @@ namespace ProjectCSharp.tests
         [TestCase("ala", "a")]
         [TestCase("1,2,3", "1")]
         [TestCase(" ", "BUUUUM")]
-        [TestCase("string", "Not implemented yet")]
         public void Test_FirstCharFromString(string input, string expectedResult)
         {
             Assert.AreEqual(expectedResult, MethodsSuite.FirstCharFromString(x: input));
@@ -48,7 +47,6 @@ namespace ProjectCSharp.tests
         public void Test_IntToString(int input)
         {
             Assert.Throws<System.ArgumentOutOfRangeException>(() => MethodsSuite.IntToString(x: 1001));
-            //Assert.AreEqual("Not implemented yet", MethodsSuite.IntToString(x: 1001));
         }
 
         [Test]
@@ -62,18 +60,23 @@ namespace ProjectCSharp.tests
         [Test]
         [TestCase("kot", "psa", "kot ma kota i psa")]
         [TestCase("kot", "mysz", "kot ma kota i mysz")]
-        [TestCase("kot", "kot", "Not implemented yet")]
         public void Test_StringInString(string inputX, string inputY, string expectedResult)
         {
             Assert.AreEqual(expectedResult, MethodsSuite.StringInString(x: inputX, y: inputY));
         }
+        
+//        [Test]
+//        [TestCase("kot", "kot")]
+//        public void Test_StringInString(string inputX, string inputY)
+//        {
+//            Assert.Throws<System.NotImplementedException>(() => MethodsSuite.StringInString(x: "kot", y: "kot"));
+//        }
 
         [Test]
         [TestCase(0, "")]
         [TestCase(1, "0")]
         [TestCase(2, "0,1")]
         [TestCase(7, "0,1,2,3,4,5,6")]
-        [TestCase(15, "Not implemented yet")]
         public void Test_Range(int input, string expectedResult)
         {
             Assert.AreEqual(expectedResult, MethodsSuite.Range(x: input));
@@ -83,7 +86,6 @@ namespace ProjectCSharp.tests
         [TestCase(7, 2, "0,2,4,6")]
         [TestCase(17, 2, "0,2,4,6,8,10,12,14,16")]
         [TestCase(17, 5, "0,5,10,15")]
-        [TestCase(25, 10, "Not implemented yet")]
         public void Test_Range(int inputX, int inputY, string expectedResult)
         {
             Assert.AreEqual(expectedResult, MethodsSuite.Range(x: inputX, y: inputY));
@@ -92,7 +94,6 @@ namespace ProjectCSharp.tests
         [Test]
         [TestCase(1, "*", "*")]
         [TestCase(7, "*", "*******")]
-        [TestCase(10, "*", "Not implemented yet")]
         public void Test_StarConcat(int inputX, string inputY, string expectedResult)
         {
             Assert.AreEqual(expectedResult, MethodsSuite.StarConcat(x: inputX, y: inputY));
@@ -130,11 +131,17 @@ namespace ProjectCSharp.tests
         [TestCase(-1, -2, "ujemne")]
         [TestCase(-1, 1, "roznych znakow")]
         [TestCase(-1, 0, "jest zero")]
-        [TestCase(1, 0, "Not implemented yet")]
         public void Test_WhatSignOfThat(int inputX, int inputY, string expectedResult)
         {
             Assert.AreEqual(expectedResult, MethodsSuite.WhatSignOfThat(x: inputX, y: inputY));
         }
+
+       [Test]
+       [TestCase(1, 0)]
+       public void Test_WhatSignOfThat(int inputX, int inputY)
+       {
+           Assert.Throws<System.NotImplementedException>(() => MethodsSuite.WhatSignOfThat(x: 1, y: 0));
+       }
         
         [Test]
         [TestCase(1, 1, "rowne")]

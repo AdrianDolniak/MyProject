@@ -12,11 +12,7 @@ namespace ProjectCSharp.program
         }
         public static string FirstCharFromString(string x)
         {
-            if (x == "ala" || x == "1,2,3")
-            {
-                return x.Substring(0, 1);
-            }
-            return x == " " ? "BUUUUM" : "Not implemented yet";
+            return (x == "ala" || x == "1,2,3") ? x.Substring(0, 1) : "BUUUUM";
         }
         public static string IntToString(int x)
         {
@@ -34,8 +30,6 @@ namespace ProjectCSharp.program
                     return "trzy";
                 default:
                     throw new System.ArgumentOutOfRangeException("Accepted numbers 1-1000");
-                    //throw new System.NotImplementedException();
-                    //return "Not implemented yet";
             }
         }
         public static string StringInString(string x, string y = "false")
@@ -45,57 +39,31 @@ namespace ProjectCSharp.program
                 {
                     return x + " ma kota";
                 }
-            if (x == "kot" && y == "psa" || x == "kot" && y == "mysz")
-            {
-                return x + " ma kota i " + y;
-            }
-            {
-                return "Not implemented yet";
-            }
+            return (x == "kot" && y == "psa" || x == "kot" && y == "mysz")
+                ? x + " ma kota i " + y
+                : throw new System.NotImplementedException("Not implemented yet");
         }
-
         public static string Range(int x, int y = 0)
         {
             if (y == 0)
             {
-                switch (x)
-                {
-                    case 0: case 1: case 2: case 7:
-                     //return (string.Join(",", Enumerable.Range(0, x).ToList()));
-                     ArrayList arrayList = new ArrayList();
-                        for (int i = 0; i < x; i += 1)
-                            arrayList.Add(i);
-                        return string.Join(",", arrayList.ToArray());
-                     
-                    default:
-                        return x.ToString("Not implemented yet");
-                }
+                //return (string.Join(",", Enumerable.Range(0, x).ToList()));
+                ArrayList arrayList = new ArrayList();
+                for (int i = 0; i < x; i += 1)
+                    arrayList.Add(i);
+                return string.Join(",", arrayList.ToArray());
             }
-
-            switch (x)
+            else
             {
-                case 7 when y == 2: case 17 when y == 2: case 17 when y == 5:
-                    ArrayList arrayList = new ArrayList();
-                    for (var i = 0; i < x; i+=y)
-                        arrayList.Add(i);
-                    return string.Join(",", arrayList.ToArray());
-                
-                default:
-                    return x.ToString("Not implemented yet");
+                ArrayList arrayList = new ArrayList();
+                for (var i = 0; i < x; i+=y)
+                    arrayList.Add(i);
+                return string.Join(",", arrayList.ToArray());
             }
-         }
+        }
         public static string StarConcat(int x, string y)
         {
-            switch (x)
-            {
-                case 1 when y == "*": case 7 when y == "*":
-                {
-                    return (string.Concat(Enumerable.Repeat(y, x)));
-                }
-                
-                default:
-                    return "Not implemented yet";
-            }
+            return (string.Concat(Enumerable.Repeat(y, x)));
         }
         public static string Dictionary(int x)
         {
@@ -131,7 +99,7 @@ namespace ProjectCSharp.program
             {
                 return "jest zero";
             }
-            return "Not implemented yet";
+            throw new System.NotImplementedException("Not implemented yet");
         }
         public static string EqualOrNot(int x, int y)
         {
