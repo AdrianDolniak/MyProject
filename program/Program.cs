@@ -16,10 +16,6 @@ namespace ProjectCSharp.program
         }
         public static string IntToString(int x)
         {
-            if (x >= 4 && x <= 1000)
-            {
-                return "other";
-            }
             switch (x)
             {
                 case 1:
@@ -29,19 +25,16 @@ namespace ProjectCSharp.program
                 case 3:
                     return "trzy";
                 default:
+                    if (x >= 4 && x <= 1000)
+                    {
+                        return "other";
+                    }
                     throw new System.ArgumentOutOfRangeException("Accepted numbers 1-1000");
             }
         }
         public static string StringInString(string x, string y = "false")
         {
-            if (y == "false")
-                if (x == "ala" || x == "kot")
-                {
-                    return x + " ma kota";
-                }
-            return (x == "kot" && y == "psa" || x == "kot" && y == "mysz")
-                ? x + " ma kota i " + y
-                : throw new System.NotImplementedException("Not implemented yet");
+            return ((x == "ala" || x == "kot") && (y == "psa" || y == "mysz")) ? x + " ma kota i " + y : x + " ma kota";
         }
         public static string Range(int x, int y = 0)
         {
@@ -91,15 +84,11 @@ namespace ProjectCSharp.program
             {
                 return "ujemne";
             }
-            if (x < 0 && y > 0)
+            if ((x < 0 && y > 0) || (x > 0 && y < 0))
             {
                 return "roznych znakow";
             }
-            if (x < 0 && y == 0)
-            {
-                return "jest zero";
-            }
-            throw new System.NotImplementedException("Not implemented yet");
+            return "jest zero";
         }
         public static string EqualOrNot(int x, int y)
         {

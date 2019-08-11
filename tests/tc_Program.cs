@@ -46,7 +46,7 @@ namespace ProjectCSharp.tests
         [TestCase(1001)]
         public void Test_IntToString(int input)
         {
-            Assert.Throws<System.ArgumentOutOfRangeException>(() => MethodsSuite.IntToString(x: 1001));
+            Assert.Throws<System.ArgumentOutOfRangeException>(() => MethodsSuite.IntToString(x: input));
         }
 
         [Test]
@@ -64,13 +64,6 @@ namespace ProjectCSharp.tests
         {
             Assert.AreEqual(expectedResult, MethodsSuite.StringInString(x: inputX, y: inputY));
         }
-        
-//        [Test]
-//        [TestCase("kot", "kot")]
-//        public void Test_StringInString(string inputX, string inputY)
-//        {
-//            Assert.Throws<System.NotImplementedException>(() => MethodsSuite.StringInString(x: "kot", y: "kot"));
-//        }
 
         [Test]
         [TestCase(0, "")]
@@ -135,13 +128,6 @@ namespace ProjectCSharp.tests
         {
             Assert.AreEqual(expectedResult, MethodsSuite.WhatSignOfThat(x: inputX, y: inputY));
         }
-
-       [Test]
-       [TestCase(1, 0)]
-       public void Test_WhatSignOfThat(int inputX, int inputY)
-       {
-           Assert.Throws<System.NotImplementedException>(() => MethodsSuite.WhatSignOfThat(x: 1, y: 0));
-       }
         
         [Test]
         [TestCase(1, 1, "rowne")]
