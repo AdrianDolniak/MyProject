@@ -169,12 +169,12 @@ namespace ProjectCSharp.tests
     public class TestIsIsogram
     {
         [Test]
-        //[TestCase("Dermatoglyphics", true)]
-        //[TestCase("isogram", true)]
+        [TestCase("Dermatoglyphics", true)]
+        [TestCase("isogram", true)]
         [TestCase("isIsogram", false)]
         [TestCase("aba", false)]
         [TestCase("moOse", false)]
-        //[TestCase("thumbscrewjapingly", true)]
+        [TestCase("thumbscrewjapingly", true)]
         [TestCase("", true)]
         public void Test_IsIsogram(string input, bool expectedResult)
         {

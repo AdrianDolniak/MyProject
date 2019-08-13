@@ -13,6 +13,7 @@ namespace ProjectCSharp.program
             {
                 return weight % 2 == 0;
             }
+
             return false;
         }
     }
@@ -81,6 +82,7 @@ namespace ProjectCSharp.program
             {
                 return (Math.Abs(number));
             }
+
             return (Math.Abs(number) * -1);
         }
     }
@@ -131,22 +133,24 @@ namespace ProjectCSharp.program
             var wordsSort = from element in wordsSplit orderby element.Length select element;
             var shortest = wordsSort.First();
             return shortest.Length;
-        } 
+        }
     }
 
-    public static class IsIsogram
+    public static class IsIsogram // solution not ready yet :)
     {
         public static bool Isogram(string x)
         {
-            if (x == "")
+            var lower = x.ToLower();
+            var chars = lower.ToArray();
+            var charsDist = lower.ToCharArray().Distinct().ToArray();
+            var strDist = new string(charsDist);
+            var str = new string(chars);
             {
-                return true;
+                return strDist == str || x == "";
             }
-            return false; // solution not ready yet :)
         }
     }
 }
-
             
         
     
