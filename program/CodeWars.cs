@@ -136,7 +136,7 @@ namespace ProjectCSharp.program
         }
     }
 
-    public static class IsIsogram // solution not ready yet :)
+    public static class IsIsogram
     {
         public static bool Isogram(string x)
         {
