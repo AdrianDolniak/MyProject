@@ -55,7 +55,7 @@ namespace ProjectCSharp.program
         }
     }
 
-    public static class RemoveFirstChar
+    public static class RemoveFirstAndLastChar
     {
         public static string Remove_char(string s)
         {
@@ -132,6 +132,18 @@ namespace ProjectCSharp.program
             var shortest = wordsSort.First();
             return shortest.Length;
         } 
+    }
+
+    public static class IsIsogram
+    {
+        public static bool Isogram(string x)
+        {
+            if (x == "")
+            {
+                return true;
+            }
+            return false; // solution not ready yet :)
+        }
     }
 }
 

@@ -1,4 +1,3 @@
-using System;
 using NUnit.Framework;
 using ProjectCSharp.program;
 
@@ -8,63 +7,19 @@ namespace ProjectCSharp.tests
     public class TestWaterMelon
     {
         [Test]
-        public void Test01()
+        [TestCase(4, true)]
+        [TestCase(2, false)]
+        [TestCase(5, false)]
+        [TestCase(88, true)]
+        [TestCase(100,true)]
+        [TestCase(67, false)]
+        [TestCase(90, true)]
+        [TestCase(10,true)]
+        [TestCase(99, false)]
+        [TestCase(32, true)]
+        public void Test_WaterMelon(int input, bool expectedResult)
         {
-            Assert.AreEqual(Watermelon.Divide(4), true);
-        }
-
-        [Test]
-        public void Test02()
-        {
-            Assert.AreEqual(Watermelon.Divide(2), false);
-        }
-
-        [Test]
-        public void Test03()
-        {
-            Assert.AreEqual(Watermelon.Divide(5), false);
-        }
-
-        [Test]
-        public void Test04()
-        {
-            Assert.AreEqual(Watermelon.Divide(88), true);
-        }
-
-        [Test]
-        public void Test05()
-        {
-            Assert.AreEqual(Watermelon.Divide(100), true);
-        }
-
-        [Test]
-        public void Test06()
-        {
-            Assert.AreEqual(Watermelon.Divide(67), false);
-        }
-
-        [Test]
-        public void Test07()
-        {
-            Assert.AreEqual(Watermelon.Divide(90), true);
-        }
-
-        [Test]
-        public void Test08()
-        {
-            Assert.AreEqual(Watermelon.Divide(10), true);
-        }
-
-        [Test]
-        public void Test09()
-        {
-            Assert.AreEqual(Watermelon.Divide(99), false);
-        }
-
-        [Test]
-        public void Test10()
-        {
-            Assert.AreEqual(Watermelon.Divide(32), true);
+            Assert.AreEqual(expectedResult, Watermelon.Divide(input));
         }
     }
 
@@ -72,9 +27,11 @@ namespace ProjectCSharp.tests
     public class TestReversedString
     {
         [Test]
-        public void World_test()
+        [TestCase("world", "dlrow")]
+        [TestCase("Adrian", "nairdA")]
+        public void Test_ReversedString(string input, string expectedResult)
         {
-            Assert.AreEqual("dlrow", ReversedString.Reversed("world"));
+            Assert.AreEqual(expectedResult, ReversedString.Reversed(input));
         }
     }
 
@@ -82,13 +39,14 @@ namespace ProjectCSharp.tests
     public class TestEvenOdd
     {
         [Test]
-        public void MyTest()
+        [TestCase(2, "Even")]
+        [TestCase(1, "Odd")]
+        [TestCase(0, "Even")]
+        [TestCase(7, "Odd")]
+        [TestCase(-1, "Odd")]
+        public void Test_EvenOdd(int input, string expectedResult)
         {
-            Assert.AreEqual("Even", EvenOdd.EvenOrOdd(2));
-            Assert.AreEqual("Odd", EvenOdd.EvenOrOdd(1));
-            Assert.AreEqual("Even", EvenOdd.EvenOrOdd(0));
-            Assert.AreEqual("Odd", EvenOdd.EvenOrOdd(7));
-            Assert.AreEqual("Odd", EvenOdd.EvenOrOdd(-1));
+            Assert.AreEqual(expectedResult, EvenOdd.EvenOrOdd(input));
         }
     }
 
@@ -96,21 +54,12 @@ namespace ProjectCSharp.tests
     public class TestDivisibleNumber
     {
         [Test]
-        public void Test1()
+        [TestCase(12, 4, 3, true)]
+        [TestCase(3, 3, 4, false)]
+        [TestCase(8, 3, 4, false)]
+        public void Test_DivisibleNumber(int inputX, int inputY, int inputZ, bool expectedResult)
         {
-            Assert.AreEqual(true, DivisibleNb.IsDivisible(12, 4, 3));
-        }
-
-        [Test]
-        public void Test2()
-        {
-            Assert.AreEqual(false, DivisibleNb.IsDivisible(3, 3, 4));
-        }
-
-        [Test]
-        public void Test3()
-        {
-            Assert.AreEqual(false, DivisibleNb.IsDivisible(8, 3, 4));
+            Assert.AreEqual(expectedResult, DivisibleNb.IsDivisible(inputX, inputY, inputZ));
         }
     }
 
@@ -118,35 +67,27 @@ namespace ProjectCSharp.tests
     public class TestDescendingOrder
     {
         [Test]
-        public void Test1()
+        [TestCase(0, 0)]
+        [TestCase(34, 43)]
+        [TestCase(19345, 95431)]
+        public void Test_DescendingOrder(int input, int expectedResult)
         {
-            Assert.AreEqual(0, Descending.DescendingOrder(0));
-        }
-
-        [Test]
-        public void Test2()
-        {
-            Assert.AreEqual(43, Descending.DescendingOrder(34));
-        }
-
-        [Test]
-        public void Test3()
-        {
-            Assert.AreEqual(95431, Descending.DescendingOrder(19345));
+            Assert.AreEqual(expectedResult, Descending.DescendingOrder(input));
         }
     }
 
     [TestFixture]
-    public class TestRemoveFirstChar
+    public class TestRemoveFirstAndLastChar
     {
         [Test]
-        public void Test1()
+        [TestCase("eloquent", "loquen")]
+        [TestCase("country", "ountr")]
+        [TestCase("person", "erso")]
+        [TestCase("place", "lac")]
+        [TestCase("ok", "")]
+        public void Test_RemoveFirstAndLastChar(string input, string expectedResult)
         {
-            StringAssert.AreEqualIgnoringCase("loquen", RemoveFirstChar.Remove_char("eloquent"));
-            StringAssert.AreEqualIgnoringCase("ountr", RemoveFirstChar.Remove_char("country"));
-            StringAssert.AreEqualIgnoringCase("erso", RemoveFirstChar.Remove_char("person"));
-            StringAssert.AreEqualIgnoringCase("lac", RemoveFirstChar.Remove_char("place"));
-            StringAssert.AreEqualIgnoringCase("", RemoveFirstChar.Remove_char("ok"));
+            Assert.AreEqual(expectedResult, RemoveFirstAndLastChar.Remove_char(input));
         }
     }
 
@@ -154,15 +95,11 @@ namespace ProjectCSharp.tests
     public class TestAddBinary
     {
         [Test]
-        public void Test1()
+        [TestCase(1, 2, "11")]
+        [TestCase(3, 7, "1010")]
+        public void Test_AddBinary(int inputX, int inputY, string expectedResult)
         {
-            Assert.AreEqual("11", Binary.AddBinary(1, 2));
-        }
-
-        [Test]
-        public void Test2()
-        {
-            Assert.AreEqual("1010", Binary.AddBinary(3, 7));
+            Assert.AreEqual(expectedResult, Binary.AddBinary(inputX, inputY));
         }
     }
 
@@ -170,15 +107,11 @@ namespace ProjectCSharp.tests
     public class TestOppositeNumber
     {
         [Test]
-        public void Test1()
+        [TestCase(1, -1)]
+        [TestCase(-50, 50)]
+        public void Test_OppositeNumber(int input, int expectedResult)
         {
-            Assert.AreEqual(-1, OppositeNumber.Opposite(1));
-        }
-
-        [Test]
-        public void Test2()
-        {
-            Assert.AreEqual(50, OppositeNumber.Opposite(-50));
+            Assert.AreEqual(expectedResult, OppositeNumber.Opposite(input));
         }
     }
 
@@ -186,15 +119,11 @@ namespace ProjectCSharp.tests
     public class TestSumOfTwoLowestPositiveIntegers
     {
         [Test]
-        public void Test1()
+        [TestCase("19, 5, 42, 2, 77", 7)]
+        [TestCase("10, 343445353, 3453445, 3453545353453",3453455)]
+        public void Test_SumOfTwoLowestPositiveIntegers(string input, int expectedResult)
         {
-            Assert.AreEqual(7, SumOfTwoLowestPositiveIntegers.Sum("19, 5, 42, 2, 77"));
-        }
-
-        [Test]
-        public void Test2()
-        {
-            Assert.AreEqual(3453455, SumOfTwoLowestPositiveIntegers.Sum("10, 343445353, 3453445, 3453545353453"));
+            Assert.AreEqual(expectedResult, SumOfTwoLowestPositiveIntegers.Sum(input));
         }
     }
 
@@ -202,16 +131,11 @@ namespace ProjectCSharp.tests
     public class TestConvertAStringToAnArray
     {
         [Test]
-        public void Test1()
+        [TestCase("Robin Singh", new string[] {"Robin", "Singh"})]
+        [TestCase("I love arrays they are my favorite", new string[] {"I", "love", "arrays", "they", "are", "my", "favorite"})]
+        public void Test_ConvertAStringToAnArray(string input, string[] expectedResult)
         {
-            Assert.AreEqual(new string[] {"Robin", "Singh"}, ConvertAStringToAnArray.ConvertToString("Robin Singh"));
-        }
-        
-        [Test]
-        public void Test2()
-        {
-            Assert.AreEqual(new string[] {"I", "love", "arrays", "they", "are", "my", "favorite"},
-                    ConvertAStringToAnArray.ConvertToString("I love arrays they are my favorite"));
+            Assert.AreEqual(expectedResult, ConvertAStringToAnArray.ConvertToString(input));
         }
     }
 
@@ -219,21 +143,12 @@ namespace ProjectCSharp.tests
     public class TestSumWithoutHighestAndLowestNumber
     {
         [Test]
-        public void Test1()
+        [TestCase(new[] { 6, 2, 1, 8, 10}, 16)]
+        [TestCase(new[] { 6 }, 0)]
+        [TestCase(null, 0)]
+        public void Test_SumWithoutHighestAndLowestNumber(int[] input, int expectedResult)
         {
-            Assert.AreEqual(16, SumWithoutHighestAndLowestNumber.Sum(new[] { 6, 2, 1, 8, 10}));
-        }
-        
-        [Test]
-        public void Test2()
-        {
-            Assert.AreEqual(0, SumWithoutHighestAndLowestNumber.Sum(new[] { 6 }));
-        }
-        
-        [Test]
-        public void Test3()
-        {
-            Assert.AreEqual(0, SumWithoutHighestAndLowestNumber.Sum(null));
+            Assert.AreEqual(expectedResult, SumWithoutHighestAndLowestNumber.Sum(input));
         }
     }
 
@@ -241,15 +156,29 @@ namespace ProjectCSharp.tests
     public class TestShortestWord
     {
         [Test]
-        public void Test1()
+        [TestCase("bitcoin take over the world maybe who knows perhaps", 3)]
+        [TestCase("turns out random test cases are easier than writing out basic ones", 3)]
+        [TestCase("Quisque semper justo at risus", 2)]
+        public void Test_ShortestWord(string input, int expectedResult)
         {
-            Assert.AreEqual(3, ShortestWord.Short("bitcoin take over the world maybe who knows perhaps"));
+            Assert.AreEqual(expectedResult, ShortestWord.Short(input));
         }
+    }
 
+    [TestFixture]
+    public class TestIsIsogram
+    {
         [Test]
-        public void Test2()
+        //[TestCase("Dermatoglyphics", true)]
+        //[TestCase("isogram", true)]
+        [TestCase("isIsogram", false)]
+        [TestCase("aba", false)]
+        [TestCase("moOse", false)]
+        //[TestCase("thumbscrewjapingly", true)]
+        [TestCase("", true)]
+        public void Test_IsIsogram(string input, bool expectedResult)
         {
-            Assert.AreEqual(3, ShortestWord.Short("turns out random test cases are easier than writing out basic ones")); 
+            Assert.AreEqual(expectedResult, IsIsogram.Isogram(input));
         }
     }
 }

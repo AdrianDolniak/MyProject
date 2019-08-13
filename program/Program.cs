@@ -29,7 +29,8 @@ namespace ProjectCSharp.program
                     {
                         return "other";
                     }
-                    throw new System.ArgumentOutOfRangeException("Accepted numbers 1-1000");
+                    return "Please input a number in range 1-1000";
+                    // throw new System.ArgumentOutOfRangeException("Accepted numbers 1-1000");
             }
         }
         public static string StringInString(string x, string y = "false")

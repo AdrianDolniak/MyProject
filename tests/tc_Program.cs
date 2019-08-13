@@ -37,17 +37,18 @@ namespace ProjectCSharp.tests
         [TestCase(2, "dwa")]
         [TestCase(3, "trzy")]
         [TestCase(100, "other")]
+        [TestCase(1001, "Please input a number in range 1-1000")]
         public void Test_IntToString(int input, string expectedResult)
         {
             Assert.AreEqual(expectedResult, MethodsSuite.IntToString(x: input));
         }
         
-        [Test]
-        [TestCase(1001)]
-        public void Test_IntToString(int input)
-        {
-            Assert.Throws<System.ArgumentOutOfRangeException>(() => MethodsSuite.IntToString(x: input));
-        }
+//        [Test]
+//        [TestCase(1001)]
+//        public void Test_IntToString(int input)
+//        {
+//            Assert.Throws<System.ArgumentOutOfRangeException>(() => MethodsSuite.IntToString(x: input));
+//        }
 
         [Test]
         [TestCase("ala", "ala ma kota")]
